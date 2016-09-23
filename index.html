@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<style>
+		body {
+			font-size: 250%;
+			background-color:  #cccccc;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			white-space: nowrap;
+
+		}
+		#centered {
+			width: 50%;
+			/*margin: 0 auto;*/
+			/*border-radius: 0;*/
+		}
+
+
+	</style>
+	<title>Refried Beans</title>
+	<script>
+		function successful_login(){
+			window.location.href = "./main.html";
+
+		}
+		function invalid_login(){
+			document.getElementById('cred_result').style.display = 'inline';
+			document.getElementById('uname').style.borderColor = "#990000";
+			document.getElementById('pword').style.borderColor = "#990000";
+		}
+		function attemptToLogin(e) {
+			if(e && e.keyCode == 13) {
+				var uname = document.getElementById('uname');
+				var pword = document.getElementById('pword');
+				if(uname.value.length === 0){
+					uname.focus();
+				}
+				else if(pword.value.length === 0){
+					if(uname.value.length === 0)
+						uname.focus();
+					else
+						pword.focus();
+				}
+				else {
+					$.post('./php/login.php', {'username': uname.value, 'password': pword.value }).done(
+						function(result) {
+							if(result == 1){ //aka, continue with the login
+								successful_login();
+							} else {
+								invalid_login();
+							}
+					});
+
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div onKeyPress="attemptToLogin(event)" class=position_absolute>
+		<div class=center id=centered>
+			<div id=websitename>Refried Beans</div>
+			<!-- <div id=cred_result>Invalid username or password!</div> -->
+			<form id=loginform>
+				<input type=username id=uname placeholder=" Username" style="margin-bottom: 3px" /><br>
+				<input type=password id=pword placeholder=" Password" style="margin-top: 3px" /><br>
+			</form>
+			<div id=buttons>
+				<button>New User</button>
+				<button form_id=loginform>Login</button>
+			</div>
+		</div>
+	</div>
+</body>
