@@ -1,25 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<style>
-		body {
-			font-size: 250%;
-			background-color:  #cccccc;
-			-webkit-background-size: cover;
-			-moz-background-size: cover;
-			-o-background-size: cover;
-			background-size: cover;
-			white-space: nowrap;
-
-		}
-		#centered {
-			width: 50%;
-			/*margin: 0 auto;*/
-			/*border-radius: 0;*/
-		}
-
-
-	</style>
+	<link rel="stylesheet" type="text/css" href="index.css" media="screen" />
 	<title>Refried Beans</title>
 	<script>
 		function successful_login(){
@@ -59,19 +41,18 @@
 		}
 	</script>
 </head>
-<body>
-	<div onKeyPress="attemptToLogin(event)" class=position_absolute>
-		<div class=center id=centered>
-			<div id=websitename>Refried Beans</div>
-			<!-- <div id=cred_result>Invalid username or password!</div> -->
-			<form id=loginform>
-				<input type=username id=uname placeholder=" Username" style="margin-bottom: 3px" /><br>
-				<input type=password id=pword placeholder=" Password" style="margin-top: 3px" /><br>
-			</form>
-			<div id=buttons>
-				<button>New User</button>
-				<button form_id=loginform>Login</button>
-			</div>
+<body >
+	<div id=center onKeyPress="attemptToLogin(event)">
+		<span id=websitename>Refried Beans</span>
+		<span id=invalid_credentials style="display:block">Invalid username or password!</span>
+		<form id=login_form>
+			<input type=username id=uname placeholder=" Username" style="margin-bottom: 3px" /><br>
+			<input type=password id=pword placeholder=" Password" style="margin-top: 3px" /><br>
+		</form>
+		<div id=buttons>
+			<button>New User</button>
+			<button form_id=login_form>Login</button>
 		</div>
 	</div>
+</div>
 </body>

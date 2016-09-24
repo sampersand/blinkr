@@ -1,0 +1,20 @@
+body {
+	font-size: 2em;
+	background-color:  #cccccc;
+	white-space: nowrap;
+	background-color: #f0f0f2;
+	margin: 0;
+	padding: 0;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#center {
+	position:absolute;
+	width: 50%;
+	/*margin: 0em auto;*/
+	padding: 1em;
+	background-color: #FFF;
+	border-radius: 1em;
+	top: 50vh;
+	left: 50vw;
+	transform: translate(-50%, -50%);
+}
