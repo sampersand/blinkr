@@ -1,0 +1,127 @@
+body {
+	background-color: #F0F0F2;
+	margin: 0;
+	padding: 0;
+}
+
+
+#login-container {
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 2em;
+	min-width: 325px;
+	position: absolute;
+	background-color: #CCC;
+	width: 25vw;
+	padding: 1em;
+	top: 50vh;
+	left: 50vw;
+	transform: translate(-50%, -50%);
+	border-radius: 1em;
+	border: 0.15em solid #555;
+}
+
+
+#login-text, #login-invalid-credentials {
+	display: block;
+	text-align: center;
+	transform: translateY(-30%);
+}
+
+.invalid {
+	color: #911;
+	background-color: #fcdede;
+	border-color: #d2b2b2
+}
+
+
+#login-invalid-credentials {
+	display:none;
+	font-size: 55%;
+    margin-top: 1ex;
+    padding: .5ex .5em;
+    border-radius: 1em;
+}
+
+#register-button {
+	padding-top: 2ex;
+	padding-bottom: 0;
+	font-size: 50%;
+}
+
+#login-form * {
+	position: relative;
+	display: inline;
+	font-size: 50%;
+	border: 0.1em solid #555;
+	border-radius: 1em;
+
+}
+
+#login-form > input {
+	transform: translateX(-50%);
+	left: 50%;
+	width: 85%;
+
+	padding-left: .5em;
+	padding-right: .5em;
+
+	height: 3.5ex;
+}
+
+#login-form > input:not(.invalid){
+	color: #333;
+	background-color: #f9ffaf;
+}
+
+/*#login-form > input.invalid::-webkit-input-placeholder  {
+	color: #333;
+	filter: saturate(100000%);
+}
+#login-form > input.invalid {
+	color: #333;
+
+	filter: saturate(300%);
+}
+*/
+
+
+
+#login-form-username {
+	margin-bottom: 3px
+}
+
+#login-form-password {
+	margin-top: 3px
+}
+
+#login-form-login-buttons {
+	border: none;
+	left:5.5%;
+}
+
+#login-form-login-buttons > input, a {
+	font-size: 75%;
+	height: 5ex;
+}
+
+#login-form-register-link {
+	border: inherit;
+	font-size: 1em;
+}
+
+#login-form-login-button {
+	color: #f0f0f0;
+    background-image: -webkit-linear-gradient(#93f773, #339713);
+    background-image: linear-gradient(#93f773, #339713);
+	width: 42%;
+	left: 30.5%;
+}
+
+
+
+
+
+
+
+
+
