@@ -1,6 +1,6 @@
 <?php
 	function canlogin($user, $pass){
-		$conn = new mysqli('localhost', 'westerhack', 'password123', 'refried_beans_db');
+		$conn = new mysqli('localhost', 'westerhack', 'password123', 'blinkr');
 		include 'user.php';
 		$u = new user($user, $conn);
 		return $u->verify($pass);

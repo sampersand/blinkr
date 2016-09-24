@@ -1,7 +1,5 @@
 <?php
 class user{
-	const CRED_TABLE_NAME = "";
-
 	public $username;
 	private $conn;
 	public function __construct($username, $conn){
@@ -33,12 +31,5 @@ class user{
 		return password_verify($password, $dbpassw_hash[0]);
 	}
 }
-// $conn = new mysqli('localhost', 'westerhack', 'password123', 'refried_beans_db');
-// $conn or die('ohno');
-// $u = new user("usern",$conn);
-// $u->write('passw');
-// echo '@' . $u->verify('passw') . '@';
-// echo password_verify("passw", $u->scrub_str("passw"));
-// echo $u->validate("passw");
 ?>
 

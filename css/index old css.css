@@ -1,0 +1,41 @@
+
+		#loginform input {
+			font-size: 100%;
+			border: 5px solid #555555;
+		}
+
+		#websitename {
+			/*position: relative;*/
+			/*bottom: 50%;*/
+			/*right: 25%;*/
+			/*transform: translate(0%, -100%);*/
+			font-size: 125%;
+			color: #333333;
+		}
+
+		#cred_result{
+			text-align: center;
+			/*position: relative;*/
+			display:none;
+			font-size:50%;
+			top: -30%;
+			left: 50%;
+			color:red;
+			transform: translate(-50%, -50%);
+		}
+		.center { 
+			/*position: relative;*/
+			/*left: -12.5%;*/
+			/*bottom: 50%;*/
+			transform: translateX(50%);
+		}
+
+		#buttons button {
+			/*position: relative;*/
+			background-color: #CCCCCC;
+			color: #333333;
+			font-size: 50%;
+			border: 5px solid #555555;
+			padding: 5px 32px;
+			display: inline-block;
+		}

@@ -35,8 +35,8 @@ function main(){
 	if($conn->connect_error)
 	    die('Could not connect: ' . $conn->connect_error . "\n");
 
-	$dbname = "refried_beans_db";
-	$tblname = "credentials";
+	$dbname = "blinkr";
+	$tblname = "users";
 
 	create_and_setup_mysql($conn, $dbname, $tblname);
 }
