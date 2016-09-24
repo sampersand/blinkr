@@ -29,7 +29,7 @@
 			return false;
 		}
 		function open_register_page(){
-			window.location.href = "register_window.php";
+			window.location.href = "register_window}.php";
 		}
 
 
