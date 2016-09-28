@@ -13,7 +13,8 @@
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 2em;
 }
-#login-container, #login-container * {/*border-radius: 1em;*/}
+#login-container, #login-container span {
+	border-radius: 1em;}
 #login-container, #login-container input {border: 0.15em solid #555; }
 
 #login-container span {
@@ -30,7 +31,7 @@
 }
 
 #login-container > span.invalid {
-	display:none; /* by default, but should be set to shown if invalid stuff is shown */
+	/*display:none; /* by default, but should be set to shown if invalid stuff is shown */
 	font-size: 85%;
 	margin-top: 1ex;
 	padding: .5ex .5em;

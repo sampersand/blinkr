@@ -10,43 +10,22 @@
 			window.location.href = "pages/main.php";
 
 		}
-		function invalid_login(){
-			// $( "#login-form > input" ).addClass( "invalid" );
-			$( "#login-invalid-credentials" ).css({display: 'block'});
-		}
-		function attemptToLogin(event) {
-			event.preventDefault();
-			if (event.preventDefault)
-		 	event.preventDefault();
-			var eles = document.getElementById('login-form').elements;
-			$.post('Scripts/login.php', { 'username': eles[0].value, 'password': eles[1].value}).done(
-				function(result) {
-					if(result == 1){ //aka, continue with the login
-						successful_login();
-					} else {
-						invalid_login();
-					}
-			});
-			return false;
-		}
-		function open_register_page(){
-			window.location.href = "register_window.php";
-		}
 	</script>
 </head>
 
 <body ng-app="login_overlay">
-	<div id=login-container ng-controller="login_controller as this">
+	<div id=login-container ng-controller="login_controller">
 	<!-- <div id=login-container ng-controller="register_controller"> -->
-		<span>{{ header_text }}</span>
-		<span class="invalid">{{ invalid_credentials }}</span>
-		<form id=login-form>
-			<input type=username ng-model="user.username_input" placeholder="{{ this.user_defaults.username }}"/>
-			<input type=password ng-model="password_input" placeholder="{{ default_password }}"/>
-			<input type=password ng-model="password_confirm_input" placeholder="{{ default_confirm_password }}" ng-if="default_confirm_password" />
+		<span>{{ text.header }}</span>
+		<span class="invalid" ng-if="text.invalid">{{ text.invalid }}</span>
+		<form id=login-form ng-submit="complete()">
+			<input type=email ng-model="form.email" placeholder="{{ form.defaults.email }}" ng-if="form.defaults.email" />
+			<input type=username ng-model="form.username" placeholder="{{ form.defaults.username }}"/>
+			<input type=password ng-model="form.password" placeholder="{{ form.defaults.password }}"/>
+			<input type=password ng-model="form.confirm_password" placeholder="{{ form.defaults.confirm_password }}" ng-if="form.defaults.confirm_password" />
 			<div id=login-buttons>
-				<a href="javascript:void(0);" onclick="open_register_page();">{{ register_link_text }}</a>
-				<input type=submit value="{{ confirm_button_text }}" >
+				<a href="javascript:void(0);" onclick="open_register_page();">{{ buttons.register }}</a>
+				<input type=submit value="{{ buttons.submit }}" >
 			</div>
 		</form>
 	</div>
