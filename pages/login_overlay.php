@@ -2,6 +2,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="stylesheets/login_overlay.css" media="screen" />
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="angularjs/login_overlay.js"></script>
 	<script>
 		// angular
 		// end angular
@@ -33,32 +34,33 @@
 		}
 	</script>
 </head>
-<script>
-		ang.module('login_overlay_app', [])
-			.controller('login_controller', ['$scope', function($scope) {
-				$scope.login_text = "hai";
-				$scope.invalid_credentials = "";
-				$scope.username_input = "";
-				}]);
-</script>
-<body ng-app="login_overlay_app">
-	<div id=login-container ng-controller="login_controller">
-		<span> {{ login_text }}</span>
-		<span class="invalid" ng-if="invalid_credentials"> {{ invalid_credentials }}</span>
+
+<body ng-app="login_overlay">
+	<div id=login-container ng-controller="login_controller as this">
+	<!-- <div id=login-container ng-controller="register_controller"> -->
+		<span>{{ header_text }}</span>
+		<span class="invalid">{{ invalid_credentials }}</span>
 		<form id=login-form>
-			<input type=username ng-model="username_input" placeholder="Username"/>
-			<input type=password ng-model="password_input" placeholder="Password"/>
+			<input type=username ng-model="user.username_input" placeholder="{{ this.user_defaults.username }}"/>
+			<input type=password ng-model="password_input" placeholder="{{ default_password }}"/>
+			<input type=password ng-model="password_confirm_input" placeholder="{{ default_confirm_password }}" ng-if="default_confirm_password" />
 			<div id=login-buttons>
-				<a href="javascript:void(0);" id=login-register onclick="open_register_page();">Register</a>
-				<input type=submit id=login-button value="Log in" >
+				<a href="javascript:void(0);" onclick="open_register_page();">{{ register_link_text }}</a>
+				<input type=submit value="{{ confirm_button_text }}" >
 			</div>
 		</form>
-		<script>
-			var form = document.getElementById('login-form');
-			if (form.attachEvent)
-				form.attachEvent("submit", attemptToLogin);
-			else 
-				form.addEventListener("submit", attemptToLogin);
-		</script>
 	</div>
+<!-- 	<script>
+		var form = document.getElementById('login-form');
+		if (form.attachEvent)
+			form.attachEvent("submit", attemptToLogin);
+		else 
+			form.addEventListener("submit", attemptToLogin);
+	</script> -->
 </body>
+
+
+
+
+
+
